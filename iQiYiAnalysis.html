@@ -1,0 +1,156 @@
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" SRC="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+    <style>
+        body {
+            /*背景线性渐变*/
+            -webkit-perspective: 800px;
+            perspective: 800px;
+            height: 100vh;
+
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Gudea', sans-serif;
+            background: #EA5C54;
+            /* Old browsers */
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #393d52), color-stop(100%, #bb6dec));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(-45deg, #ea382d 0%, #924bec 100%);
+            /* Chrome10+,Safari5.1+ */
+            /* Opera 11.10+ */
+            /* IE10+ */
+            background: -webkit-linear-gradient(315deg, #EA5C54 0%, #bb6dec 100%);
+            background: linear-gradient(135deg, #EA5C54 0%, #bb6dec 100%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EA5C54 ', endColorstr='#bb6dec',GradientType=1 );
+            /* IE6-9 fallback on horizontal gradient */
+        }
+        body ::-webkit-input-placeholder {
+            color: #4E546D;
+        }
+        .success{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #login{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 120;
+            width: 400px;
+            height: 80%;
+            min-height: 450px;
+            background: #292d3b;
+            opacity: 1;
+            z-index: 120;
+        }
+        #login input[type=text]{
+            margin: 60px 40px 0 40px;
+            color: #e9ecfc;
+            width: 320px;
+            background: #32364a;
+            left: 0;
+            padding: 10px 65px;
+            border-top: 2px solid #393d52;
+            border-bottom: 2px solid #393d52;
+            border-right: none;
+            border-left: none;
+            outline: none;
+            font-family: 'Gudea', sans-serif;
+            box-shadow: none;
+            z-index: 120;
+        }
+        #login button{
+
+            border-radius: 50px;
+            background: transparent;
+            padding: 10px 50px;
+            border: 2px solid #DC6180;
+            color: #DC6180;
+            text-transform: uppercase;
+            font-size: 11px;
+            -webkit-transition-property: background,color;
+            transition-property: background,color;
+            -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+            margin: 80px 100px 0 140px;
+        }
+        #login button:hover{
+            background:#DC6180;
+            color: #fff;
+        }
+        /* 半透明的遮罩层 */
+        #overlay {
+            background: #000;
+            filter: alpha(opacity=50); /* IE的透明度 */
+            opacity: 0.5;  /* 透明度 */
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 100; /* 此处的图层要大于页面 */
+            display:none;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        /* 显示遮罩层 */
+        function showOverlay() {
+            $("#overlay").height(pageHeight());
+            $("#overlay").width(pageWidth());
+
+            // fadeTo第一个参数为速度，第二个为透明度
+            // 多重方式控制透明度，保证兼容性，但也带来修改麻烦的问题
+            $("#overlay").fadeTo(200, 0.5);
+
+        }
+
+        /* 隐藏覆盖层 */
+        function hideOverlay() {
+            var url;
+            var target
+            $("#login").fadeOut(200);
+            $("#overlay").fadeOut(0);
+            clearInterval(show);
+            URL = document.getElementById('url').value;
+            $("#vipurl").attr('src','http://www.100000001.top/video.php?url='+URL);
+
+        }
+
+        /* 当前页面高度 */
+        function pageHeight() {
+            return document.body.clientHeight;
+        }
+
+        /* 当前页面宽度 */
+        function pageWidth() {
+            return document.body.clientWidthidth;
+        }
+
+        var show = setInterval(showOverlay,100);
+    </script>
+</head>
+
+<body onload="showOverlay()">
+
+    <div id="overlay">
+
+    </div>
+    <div id="login">
+        <img src="http://oskhhyaq3.bkt.clouddn.com/blog/171016/JIei28aIcB.png" style="margin: 80px 147px 0 147px">
+        <img src="http://oskhhyaq3.bkt.clouddn.com/blog/171016/fJm2K08617.png" style="position: relative;top:86px;left: 70px">
+        <input id="url" placeholder="视频链接" type="text">
+        <button  onclick="hideOverlay()">播放</button>
+    </div>
+    <div class='success'>
+        <iframe style="width: 630px; height: 475px;" name="iframe0" id="vipurl" src="" frameborder="0" data-id="" seamless></iframe>
+    </div>
+
+</body>
