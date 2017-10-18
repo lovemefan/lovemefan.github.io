@@ -4,13 +4,36 @@
 
     
   <url>
+    <loc>lovemefan.win/2017/09/12/VBA/Excel%20%E5%AE%8F%E5%91%BD%E4%BB%A4%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2017-10-18T12:46:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>Excel 宏命令处理(一)</title>
+        <pubTime>2017-09-12T05:58:00.000Z</pubTime>
+        
+        <tag>VBA</tag>
+         
+        <tag>Excel</tag>
+         
+        <tag>宏命令</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>lovemefan.win/2017/10/17/Java/Java%20Robot%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/</loc>
-    <lastmod>2017-10-17T13:03:26.955Z</lastmod>
+    <lastmod>2017-10-17T13:06:08.603Z</lastmod>
     <data>
         <display>
         <title>Java学习笔记 (一)   基于Robot类的一些自动测试类的一些应用</title>
         <pubTime>2017-10-17T13:03:00.000Z</pubTime>
         
+        <tag>编程语言</tag>
+         
         <tag>学习笔记</tag>
          
         <tag>Java</tag>
@@ -30,11 +53,11 @@
         <title>Python学习笔记 (四)  安装scrapy框架</title>
         <pubTime>2017-09-23T06:40:00.000Z</pubTime>
         
-        <tag>学习笔记</tag>
-         
         <tag>Python</tag>
          
         <tag>编程语言</tag>
+         
+        <tag>学习笔记</tag>
          
          
            
@@ -51,11 +74,11 @@
         <title>Android学习笔记 (一)   按钮事件处理的五种方法</title>
         <pubTime>2017-09-12T05:58:00.000Z</pubTime>
         
-        <tag>APP开发</tag>
-         
         <tag>学习笔记</tag>
          
         <tag>Android</tag>
+         
+        <tag>APP开发</tag>
          
          
            
@@ -91,11 +114,11 @@
         <title>Python学习笔记 (三)  简单爬虫实战</title>
         <pubTime>2017-08-19T14:00:00.000Z</pubTime>
         
-        <tag>学习笔记</tag>
-         
         <tag>Python</tag>
          
         <tag>编程语言</tag>
+         
+        <tag>学习笔记</tag>
          
          
            
@@ -131,11 +154,11 @@
         <title>Python学习笔记 (二)  第三方库安装</title>
         <pubTime>2017-07-22T13:00:00.000Z</pubTime>
         
-        <tag>学习笔记</tag>
-         
         <tag>Python</tag>
          
         <tag>编程语言</tag>
+         
+        <tag>学习笔记</tag>
          
          
            
@@ -152,11 +175,11 @@
         <title>Python学习笔记 (一)  初识Python</title>
         <pubTime>2017-07-22T12:00:00.000Z</pubTime>
         
-        <tag>学习笔记</tag>
-         
         <tag>Python</tag>
          
         <tag>编程语言</tag>
+         
+        <tag>学习笔记</tag>
          
          
            
@@ -173,11 +196,11 @@
         <title>UWP学习笔记 (三)   XAML界面原理和语法</title>
         <pubTime>2017-07-10T14:00:00.000Z</pubTime>
         
-        <tag>UWP</tag>
+        <tag>学习笔记</tag>
          
         <tag>APP开发</tag>
          
-        <tag>学习笔记</tag>
+        <tag>UWP</tag>
          
          
            
@@ -194,11 +217,11 @@
         <title>UWP学习笔记 (二)   UWP开发环境及项目工程解析</title>
         <pubTime>2017-07-09T14:48:00.000Z</pubTime>
         
-        <tag>UWP</tag>
+        <tag>学习笔记</tag>
          
         <tag>APP开发</tag>
          
-        <tag>学习笔记</tag>
+        <tag>UWP</tag>
          
          
            
@@ -215,11 +238,11 @@
         <title>UWP学习笔记 (一) 初识UWP</title>
         <pubTime>2017-07-08T03:02:00.000Z</pubTime>
         
-        <tag>UWP</tag>
+        <tag>学习笔记</tag>
          
         <tag>APP开发</tag>
          
-        <tag>学习笔记</tag>
+        <tag>UWP</tag>
          
          
            
