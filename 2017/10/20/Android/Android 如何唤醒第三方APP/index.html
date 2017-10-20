@@ -54,7 +54,7 @@
 </head>
 <body>
   <div id="container">
-    <div class="left-col frogGlass">
+    <div class="left-col">
     <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
@@ -336,8 +336,10 @@
 <h3 id="2-启动APP"><a href="#2-启动APP" class="headerlink" title="2.启动APP"></a>2.启动APP</h3><p>对于第三方APP,笔者主要采用设置<code>Component</code>的方法</p>
 <p>在监听器或其他区域,输入以下代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line"><span class="comment">//ComponentName(String psk,String cls)</span></div><div class="line"><span class="comment">//PKG的组件存在的包的名字。不能为空。CLS的PKG实现组件的内部类的名字。不能为空。</span></div><div class="line">      ComponentName cmp = <span class="keyword">new</span> ComponentName(<span class="string">"com.tencent.mm"</span>,<span class="string">"com.tencent.mm.ui.LauncherUI"</span>);<span class="comment">//启动微信</span></div><div class="line">      intent.setAction(Intent.ACTION_MAIN);</div><div class="line">      intent.addCategory(Intent.CATEGORY_LAUNCHER);</div><div class="line">      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</div><div class="line">      intent.setComponent(cmp);</div><div class="line">      startActivityForResult(intent, <span class="number">0</span>);</div></pre></td></tr></table></figure>
-<h2 id="一些安卓应用的pkg和cls"><a href="#一些安卓应用的pkg和cls" class="headerlink" title="一些安卓应用的pkg和cls"></a>一些安卓应用的pkg和cls</h2><p><code>以下的APP都是根据笔者的当前手机的app导出得到的,所以只有部分常用的应用</code><br>导出App信息(pkg和cls)项目:<a href="https://github.com/lovemefan/PackageMangerDemo" target="_blank" rel="external">https://github.com/lovemefan/PackageMangerDemo</a>
-<table style="text-align:center;border:1px">
+<h2 id="一些安卓应用的pkg和cls"><a href="#一些安卓应用的pkg和cls" class="headerlink" title="一些安卓应用的pkg和cls"></a>一些安卓应用的pkg和cls</h2><p><code>以下的APP都是根据笔者的当前手机的app导出得到的,所以只有部分常用的应用</code><br>导出App信息(pkg和cls)项目:<a href="https://github.com/lovemefan/PackageMangerDemo" target="_blank" rel="external">https://github.com/lovemefan/PackageMangerDemo</a><br></p>
+
+
+<table>
 <thead>
 <tr>
 <th>应用</th>
@@ -746,7 +748,6 @@
 <td>com.microsoft.office.word</td>
 <td>com.microsoft.office.apphost.LaunchActivity</td>
 </tr></tbody></table>
-
 
       
 
