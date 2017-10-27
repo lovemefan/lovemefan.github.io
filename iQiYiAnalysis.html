@@ -64,7 +64,7 @@
             box-shadow: none;
             z-index: 120;
         }
-        #login button{
+        button{
 
             border-radius: 50px;
             background: transparent;
@@ -79,7 +79,7 @@
             transition-duration: .2s;
             margin: 80px 100px 0 140px;
         }
-        #login button:hover{
+        button:hover{
             background:#DC6180;
             color: #fff;
         }
@@ -102,6 +102,10 @@
 
     <script type="text/javascript">
         /* 显示遮罩层 */
+        var interface = new Array([
+            "https://api.47ks.com/webcloud/?v=",
+            "http://www.100000001.top/video.php?url="
+        ])
         function showOverlay() {
             $("#overlay").height(pageHeight());
             $("#overlay").width(pageWidth());
@@ -120,7 +124,7 @@
             $("#overlay").fadeOut(0);
             clearInterval(show);
             URL = document.getElementById('url').value;
-            $("#vipurl").attr('src','http://www.100000001.top/video.php?url='+URL);
+            $("#vipurl").attr('src','http://www.16891699.com/index/iqiyi.php?url='+URL);
 
         }
 
@@ -133,7 +137,16 @@
         function pageWidth() {
             return document.body.clientWidthidth;
         }
-
+        function fullScreen() {
+                alert("123");
+//            var vip = document.getElementById("vipurl");
+//            vip.style.width = window.screen.availWidth;
+//            vip.style.height = window.screen.availHeight;
+//            $("#success").style.width = "100%";
+//            $("#success").style.height = "100%";
+            $("#vipurl").width =  "100%";
+            $("#vipurl").height =  "100%";
+        }
         var show = setInterval(showOverlay,100);
     </script>
 </head>
@@ -150,7 +163,9 @@
         <button  onclick="hideOverlay()">播放</button>
     </div>
     <div class='success'>
-        <iframe style="width: 630px; height: 475px;" name="iframe0" id="vipurl" src="" frameborder="0" data-id="" seamless></iframe>
+       
+        <iframe style="width: 630px; height: 475px;" allowfullscreen="true" name="iframe0" id="vipurl" src="" frameborder="0" data-id="" seamless></iframe>
     </div>
+    <button id="fullScreen" onclick="fullScreen()">全屏</button>
 
 </body>
