@@ -11,17 +11,17 @@
             margin: 0;
             overflow: hidden;
             font-family: 'Gudea', sans-serif;
-            background: #EA5C54;
+            background: rgba(251, 247, 8, 0.9);
             /* Old browsers */
             /* FF3.6+ */
-            background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #393d52), color-stop(100%, #bb6dec));
+            background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgb(254, 0, 0)), color-stop(100%,  rgba(6, 59, 250, 0.9)));
             /* Chrome,Safari4+ */
-            background: -webkit-linear-gradient(-45deg, #ea382d 0%, #924bec 100%);
+            background: -webkit-linear-gradient(-45deg, rgb(254, 0, 0) 0%, rgba(6, 59, 250, 0.9) 100%);
             /* Chrome10+,Safari5.1+ */
             /* Opera 11.10+ */
             /* IE10+ */
-            background: -webkit-linear-gradient(315deg, #EA5C54 0%, #bb6dec 100%);
-            background: linear-gradient(135deg, #EA5C54 0%, #bb6dec 100%);
+            background: -webkit-linear-gradient(315deg, rgb(254, 0, 0) 0%, rgba(6, 59, 250, 0.9) 100%);
+            background: -webkit-linear-gradient(315deg, rgb(254, 0, 0) 0%, rgba(6, 59, 250, 0.9) 100%);
             /* W3C */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EA5C54 ', endColorstr='#bb6dec',GradientType=1 );
             /* IE6-9 fallback on horizontal gradient */
@@ -87,7 +87,7 @@
         #overlay {
             background: #000;
             filter: alpha(opacity=50); /* IE的透明度 */
-            opacity: 0.5;  /* 透明度 */
+            opacity: 0.6;  /* 透明度 */
             display: none;
             position: absolute;
             top: 0px;
@@ -120,12 +120,14 @@
         function hideOverlay() {
             var url;
             var target
-            $("#login").fadeOut(200);
-            $("#overlay").fadeOut(0);
-            clearInterval(show);
+//            服务器端做了限制,不可用frame套在本网页里.现在的解决方案是跳转到该接口
+//            $("#login").fadeOut(0);
+//            $("#overlay").fadeOut(0);
+//            $("#vipurl").attr('src','http://www.16891699.com/index/iqiyi.php?url='+URL);
+////                                     http://www.16891699.com IP为  59.63.229.35
+//            clearInterval(show);
             URL = document.getElementById('url').value;
-            $("#vipurl").attr('src','http://www.16891699.com/index/iqiyi.php?url='+URL);
-
+            window.location.href= 'http://www.16891699.com/index/iqiyi.php?url='+URL;
         }
 
         /* 当前页面高度 */
@@ -163,8 +165,10 @@
         <button  onclick="hideOverlay()">播放</button>
     </div>
     <div class='success'>
-       
+        <!--<video style="width: 630px; height: 475px;" src="" id="vipurl" controls="controls">-->
+        <!--</video>-->
         <iframe style="width: 630px; height: 475px;" allowfullscreen="true" name="iframe0" id="vipurl" src="" frameborder="0" data-id="" seamless></iframe>
     </div>
+    <!--<button id="fullScreen" onclick="fullScreen()">全屏</button>-->
 
 </body>
