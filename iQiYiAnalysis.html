@@ -120,15 +120,15 @@
         function hideOverlay() {
             var url;
             var target
-//            服务器端做了限制,不可用frame套在本网页里.现在的解决方案是跳转到该接口
-//            $("#login").fadeOut(0);
-//            $("#overlay").fadeOut(0);
-//            $("#vipurl").attr('src','http://www.16891699.com/index/iqiyi.php?url='+URL);
-////                                     http://www.16891699.com IP为  59.63.229.35
-//            clearInterval(show);
-            URL = document.getElementById('url').value;
-            window.location='http://www.16891699.com/index/iqiyi.php?url='+URL;
-			window.location.reload('http://www.16891699.com/index/iqiyi.php?url='+URL);
+			URL = document.getElementById('url').value;
+          //服务器端做了限制,不可用frame套在本网页里.现在的解决方案是跳转到该接口
+            $("#login").fadeOut(0);
+            $("#overlay").fadeOut(0);
+            $("#vipurl").attr('src','http://www.16891699.com/index/iqiyi.php?url='+URL);
+//                                     http://www.16891699.com IP为  59.63.229.35
+            clearInterval(show);
+            
+//            window.open('http://www.16891699.com/index/iqiyi.php?url='+URL);
         }
 
         /* 当前页面高度 */
