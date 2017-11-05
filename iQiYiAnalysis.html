@@ -16,7 +16,7 @@
             /* FF3.6+ */
             background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgb(254, 0, 0)), color-stop(100%,  rgba(6, 59, 250, 0.9)));
             /* Chrome,Safari4+ */
-            background: -webkit-linear-gradient(-45deg, rgb(254, 0, 0) 0%, rgba(6, 59, 250, 0.9) 100%);
+            background: -webkit-linear-gradient(45deg, #e10522 0%, rgba(225, 5, 34, 0) 70%),135deg, #3105d1 10%, rgba(49, 5, 209, 0) 80%,225deg, #0adbd8 10%, rgba(10, 219, 216, 0) 80%,315deg, #09f505 100%, rgba(9, 245, 5, 0) 70%);
             /* Chrome10+,Safari5.1+ */
             /* Opera 11.10+ */
             /* IE10+ */
@@ -44,6 +44,7 @@
             width: 400px;
             height: 80%;
             min-height: 450px;
+            max-height: 750px;
             background: #292d3b;
             opacity: 1;
             z-index: 120;
@@ -64,8 +65,22 @@
             box-shadow: none;
             z-index: 120;
         }
-        button{
+        .selectPort{
+            border:0px;
+            font-size:18px;
+            text-align: center;
+            position: absolute;
+            margin: 20px 150px 0 100px;
+            z-index: 120;
+            min-height: 36px;
+            background: #32364a;
+            border-top: 2px solid #393d52;
+            border-bottom: 2px solid #393d52;
+            opacity: 1;
+            z-index: 120;
+        }
 
+        button{
             border-radius: 50px;
             background: transparent;
             padding: 10px 50px;
@@ -115,20 +130,22 @@
             $("#overlay").fadeTo(200, 0.5);
 
         }
-
+        var curPort="http://www.16891699.com/index/iqiyi.php?url=";//初始值为无名小站的接口
+        //                                     http://www.16891699.com IP为  59.63.229.35
+        function changeUrl(rel) {
+                curPort = rel.value;
+        }
         /* 隐藏覆盖层 */
         function hideOverlay() {
-            var url;
-            var target
-			URL = document.getElementById('url').value;
-          //服务器端做了限制,不可用frame套在本网页里.现在的解决方案是跳转到该接口
+			var URL = document.getElementById('url').value;
             $("#login").fadeOut(0);
             $("#overlay").fadeOut(0);
-            $("#vipurl").attr('src','http://www.16891699.com/index/iqiyi.php?url='+URL);
-//                                     http://www.16891699.com IP为  59.63.229.35
+            if(URL!=""){
+                $("#vipurl").attr('src',curPort+URL);
+            }else{
+                alert("请输入地址")
+            }
             clearInterval(show);
-            
-//            window.open('http://www.16891699.com/index/iqiyi.php?url='+URL);
         }
 
         /* 当前页面高度 */
@@ -151,6 +168,7 @@
             $("#vipurl").height =  "100%";
         }
         var show = setInterval(showOverlay,100);
+
     </script>
 </head>
 
@@ -161,8 +179,28 @@
     </div>
     <div id="login">
         <img src="http://oskhhyaq3.bkt.clouddn.com/blog/171016/JIei28aIcB.png" style="margin: 80px 147px 0 147px">
-        <img src="http://oskhhyaq3.bkt.clouddn.com/blog/171016/fJm2K08617.png" style="position: relative;top:86px;left: 70px">
+        <img src="http://oskhhyaq3.bkt.clouddn.com/blog/171016/fJm2K08617.png" style="position: relative;top:90px;left: 70px">
+        <select class="selectPort"  onchange="changeUrl(this)">
+            <option value="http://aikan-tv.com/?url=">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选择接口</option>
+            <option value="http://api.baiyug.cn/vip/index.php?url=">万能接口1</option>
+            <option value="http://000o.cc/jx/ty.php?url=">万能接口2</option>
+            <option value="http://jiexi.92fz.cn/player/vip.php?url=">万能接口3</option>
+            <option value="http://www.82190555.com/index/qqvod.php?url=">万能接口4</option>
+            <option value="http://jx.vgoodapi.com/jx.php?url=">万能接口5</option>
+            <option value="http://vip.jlsprh.com/index.php?url=">万能接口6</option>
+            <option value="http://aikan-tv.com/?url=">腾讯视频接口1</option>
+            <option value="http://api.nepian.com/ckparse/?url=">爱奇艺超清接口1</option>
+            <option value="http://j.zz22x.com/jx/?url=">爱奇艺超清接口2</option>
+            <option value="https://api.flvsp.com/?url=">爱奇艺超清接口3</option>
+            <option value="http://api.xfsub.com/index.php?url=">芒果TV超清接口</option>
+            <option value="http://65yw.2m.vc/chaojikan.php?url=">芒果TV手机接口</option>
+            <option value="http://www.82190555.com/index/qqvod.php?url=">优酷超清接口</option>
+            <option value="http://vip.jlsprh.com/index.php?url=">搜狐视频接口</option>
+            <option value="http://2gty.com/apiurl/yun.php?url=">乐视视频接口</option>
+        </select>
         <input id="url" placeholder="视频链接" type="text">
+
+
         <button  onclick="hideOverlay()">播放</button>
     </div>
     <div class='success'>
