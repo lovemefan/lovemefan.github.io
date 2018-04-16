@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lovemefan的表白墙</title>
+    <title>Lovemefan的表白墙 更新中...</title>
     <style>
         body {
             /*背景线性渐变*/
@@ -33,7 +33,7 @@
         body ::-webkit-input-placeholder {
             color: #4E546D;
         }
-        .content {
+        .content .timer{
             position: absolute;
             width: 100%;
             top: 40%;
@@ -48,17 +48,24 @@
             left:0px;
         }
     </style>
+    <link rel="stylesheet" href="love/dist/meplayer.css">
+    <link rel="stylesheet" href="love/css/main.css">
 </head>
 <body>
-    <canvas id="sakura"></canvas>
-    <div class="content">
-        <h2>芳芳,从表白的那一刻起,已经过了</h2>
-        <div class="timer">
-            <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
-        </div>
+<canvas id="sakura"></canvas>
+<div class="content">
+    <!--<h2>芳芳,从表白的那一刻起,已经过了</h2>-->
+    <div class="timer">
+        <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
     </div>
-	<audio id="bgmMusic" src="lovebgm.mp3" autoplay="autoplay" loop preload="auto" type="audio/mp3"></audio>
+    <div class="container" style="position:fixed; bottom:0; left:0;width:100%;">
+        <div class="music"></div>
+    </div>
+</div>
+
 </body>
+<script src="love/dist/meplayer.min.js"></script>
+<script src="love/js/main.js"></script>
 <script>
     function timer() {
         var start = new Date("2018/4/5");
