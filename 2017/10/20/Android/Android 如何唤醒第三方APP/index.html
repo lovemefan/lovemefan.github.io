@@ -68,7 +68,7 @@
           <h1 class="header-author"><a href="/">lovemefan</a></h1>
         </hgroup>
         
-        <p class="header-subtitle">一入编程深似海，从此妹纸是路人</p>
+        <p class="header-subtitle">梦里花落知多少</p>
         
         
             <form>
@@ -184,7 +184,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/APP开发/" style="font-size: 18px;">APP开发</a> <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/PowerShell/" style="font-size: 10px;">PowerShell</a> <a href="/tags/Python/" style="font-size: 16px;">Python</a> <a href="/tags/UWP/" style="font-size: 14px;">UWP</a> <a href="/tags/VBA/" style="font-size: 10px;">VBA</a> <a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/宏命令/" style="font-size: 10px;">宏命令</a> <a href="/tags/数学建模/" style="font-size: 10px;">数学建模</a> <a href="/tags/编程语言/" style="font-size: 18px;">编程语言</a> <a href="/tags/论文/" style="font-size: 10px;">论文</a>
+                        <a href="/tags/APP开发/" style="font-size: 17.5px;">APP开发</a> <a href="/tags/Android/" style="font-size: 12.5px;">Android</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/PowerShell/" style="font-size: 10px;">PowerShell</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/UWP/" style="font-size: 12.5px;">UWP</a> <a href="/tags/VBA/" style="font-size: 10px;">VBA</a> <a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/宏命令/" style="font-size: 10px;">宏命令</a> <a href="/tags/数学建模/" style="font-size: 10px;">数学建模</a> <a href="/tags/编程语言/" style="font-size: 17.5px;">编程语言</a> <a href="/tags/论文/" style="font-size: 10px;">论文</a>
                     </div>
                 </section>
                 
@@ -227,7 +227,7 @@
               <h1 class="header-author"><a href="/" title="回到主页">lovemefan</a></h1>
             </hgroup>
             
-            <p class="header-subtitle">一入编程深似海，从此妹纸是路人</p>
+            <p class="header-subtitle">梦里花落知多少</p>
             
             <nav class="header-menu">
                 <ul>
@@ -336,418 +336,8 @@
 <h3 id="2-启动APP"><a href="#2-启动APP" class="headerlink" title="2.启动APP"></a>2.启动APP</h3><p>对于第三方APP,笔者主要采用设置<code>Component</code>的方法</p>
 <p>在监听器或其他区域,输入以下代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line"><span class="comment">//ComponentName(String psk,String cls)</span></div><div class="line"><span class="comment">//PKG的组件存在的包的名字。不能为空。CLS的PKG实现组件的内部类的名字。不能为空。</span></div><div class="line">      ComponentName cmp = <span class="keyword">new</span> ComponentName(<span class="string">"com.tencent.mm"</span>,<span class="string">"com.tencent.mm.ui.LauncherUI"</span>);<span class="comment">//启动微信</span></div><div class="line">      intent.setAction(Intent.ACTION_MAIN);</div><div class="line">      intent.addCategory(Intent.CATEGORY_LAUNCHER);</div><div class="line">      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</div><div class="line">      intent.setComponent(cmp);</div><div class="line">      startActivityForResult(intent, <span class="number">0</span>);</div></pre></td></tr></table></figure>
-<h2 id="一些安卓应用的pkg和cls"><a href="#一些安卓应用的pkg和cls" class="headerlink" title="一些安卓应用的pkg和cls"></a>一些安卓应用的pkg和cls</h2><p><code>以下的APP都是根据笔者的当前手机的app导出得到的,所以只有部分常用的应用</code><br>导出App信息(pkg和cls)项目:<a href="https://github.com/lovemefan/PackageMangerDemo" target="_blank" rel="external">https://github.com/lovemefan/PackageMangerDemo</a><br></p>
+<h2 id="一些安卓应用的pkg和cls"><a href="#一些安卓应用的pkg和cls" class="headerlink" title="一些安卓应用的pkg和cls"></a>一些安卓应用的pkg和cls</h2><p><code>以下的APP都是根据笔者的当前手机的app导出得到的,所以只有部分常用的应用</code><br>导出App信息(pkg和cls)项目:<a href="https://github.com/lovemefan/PackageMangerDemo" target="_blank" rel="external">https://github.com/lovemefan/PackageMangerDemo</a><br>|应用|pkg |cls |<br>|:——–|:———-:|:————–:|<br>|阿里云|com.alibaba.aliyun|com.alibaba.aliyun.biz.login.WelcomeActivity|<br>|爱奇艺|com.qiyi.video|com.qiyi.video.WelcomeActivity|<br>|百度贴吧|com.baidu.tieba|com.baidu.tieba.LogoActivity|<br>|百度网盘|com.baidu.netdisk|com.baidu.netdisk.ui.Navigate|<br>|备忘录|com.samsung.android.app.memo|com.samsung.android.app.memo.Main|<br>|哔哩哔哩|tv.danmaku.bili|tv.danmaku.bili.ui.splash.SplashActivity|<br>|车来了|com.ygkj.chelaile.standard|dev.xesam.chelaile.app.module.func.SplashActivity|<br>|电话|com.android.contacts|com.android.dialer.DialtactsActivity|<br>|电子邮件|com.samsung.android.email.provider|com.samsung.android.email.ui.activity.MessageListXL|<br>|盖乐世空间|com.samsung.android.voc|com.samsung.android.voc.LauncherActivity|<br>|高德地图|com.autonavi.minimap|com.autonavi.map.activity.SplashActivity|<br>|高铁管家12306火车票|com.gtgj.view|com.gtgj.view.LaunchActivity|<br>|黑域|me.piebridge.brevent|me.piebridge.brevent.ui.BreventActivity|<br>|计算器|com.sec.android.app.popupcalculator|com.sec.android.app.popupcalculator.Calculator|<br>|交管12123|com.tmri.app.main|com.tmri.app.ui.activity.TmriActivity|<br>|京东|com.jingdong.app.mall|com.jingdong.app.mall.main.MainActivity|<br>|联系人|com.android.contacts|com.android.contacts.activities.PeopleActivity|<br>|猎吧出行|com.example.liabarcarandroid|com.liabarcar.guide.SplashActivity|<br>|浏览器|com.sec.android.app.sbrowser|com.sec.android.app.sbrowser.SBrowserMainActivity|<br>|录音机|com.sec.android.app.voicenote|com.sec.android.app.voicenote.main.VNMainActivity|<br>|南昌航空大学|com.eteasun.nanhang|com.eteasun.nanhang.activity.WelcomeActvity|<br>|全民K歌|com.tencent.karaoke|com.tencent.karaoke.module.splash.ui.SplashBaseActivity|<br>|三星健康|com.sec.android.app.shealth|com.samsung.android.app.shealth.home.HomeMainActivity|<br>|三星生活助手|com.samsung.android.app.sreminder|com.samsung.android.app.sreminder.phone.cardlist.SReminderActivity|<br>|三星视频|com.samsung.android.onlinevideo|com.samsung.android.onlinevideo.list.activity.VideoList|<br>|三星音乐|com.samsung.android.app.music.chn|com.samsung.android.app.music.common.activity.MusicMainActivity|<br>|三星阅读|com.mci.smagazine|com.chaozh.iReader.ui.activity.WelcomeActivity|<br>|三星云|com.samsung.multidevicecloud|com.kanbox.wp.Main|<br>|扫描全能王|com.intsig.camscanner|com.intsig.camscanner.WelcomeActivity|<br>|扇贝单词|com.shanbay.words|com.shanbay.words.startup.SplashActivity|<br>|设置|com.android.settings|com.android.settings.Settings|<br>|时钟|com.sec.android.app.clockpackage|com.sec.android.app.clockpackage.ClockPackage|<br>|手机淘宝|com.taobao.taobao|com.taobao.tao.welcome.Welcome|<br>|手机营业厅|com.sinovatech.unicom.ui|com.sinovatech.unicom.ui.WelcomeClient|<br>|搜狐视频|com.sohu.sohuvideo|com.sohu.sohuvideo.FirstNavigationActivityGroup|<br>|腾讯动漫|com.qq.ac.android|com.qq.ac.android.view.activity.SplashActivity|<br>|腾讯课堂|com.tencent.edu|com.tencent.edu.module.SplashActivity|<br>|腾讯视频|com.tencent.qqlive|com.tencent.qqlive.ona.activity.WelcomeActivity|<br>|通卡宝|com.nci.tkb|com.nci.tkb.ui.SplashActivity|<br>|网易有道词典|com.youdao.dict|com.youdao.dict.activity.DictSplashActivity|<br>|网易云音乐|com.netease.cloudmusic|com.netease.cloudmusic.activity.LoadingActivity|<br>|微博|com.sina.weibo|com.sina.weibo.SplashActivity|<br>|微信|com.tencent.mm|com.tencent.mm.ui.LauncherUI|<br>|我的文件|com.sec.android.app.myfiles|com.sec.android.app.myfiles.common.MainActivity|<br>|闲鱼|com.taobao.idlefish|com.taobao.fleamarket.home.activity.InitActivity.Round|<br>|相册|com.sec.android.gallery3d|com.sec.android.gallery3d.app.GalleryOpaqueActivity|<br>|相机|com.sec.android.app.camera|com.sec.android.app.camera.Camera|<br>|小米VR|com.mi.dlabs.vr.hulk|com.mi.dlabs.vr.hulk.launch.HulkLaunchActivity|<br>|信息|com.android.mms|com.android.mms.ui.ConversationComposer|<br>|一键锁屏|com.yujing.lockscreen|com.yujing.lockscreen.MainActivity|<br>|应用商店|com.sec.android.app.samsungapps|com.sec.android.app.samsungapps.SamsungAppsMainActivity|<br>|影梭|com.github.shadowsocks|com.github.shadowsocks.Shadowsocks|<br>|优酷|com.youku.phone|com.youku.phone.ActivityWelcome|<br>|悦动圈|com.yuedong.sport|com.yuedong.sport.main.WelcomeActivity_|<br>|支付宝|com.eg.android.AlipayGphone|com.eg.android.AlipayGphone.AlipayLogin|<br>|知乎|com.zhihu.android|com.zhihu.android.app.ui.activity.MainActivity|<br>|智能管理器|com.samsung.android.sm|com.samsung.android.sm.app.dashboard.SmartManagerDashBoardActivity|<br>|主题商店|com.samsung.android.themestore|com.samsung.android.themestore.activity.Launcher|<br>|租八戒|com.rentpig.customer|com.rentpig.customer.main.WelcomeActivity|<br>|AChm Free|com.pchen.achmfree|com.pchen.achm.MainActivity|<br>|Chrome|com.android.chrome|com.google.android.apps.chrome.Main|<br>|ES文件浏览器|com.estrongs.android.pop|com.estrongs.android.pop.app.openscreenad.NewSplashActivity|<br>|Excel|com.microsoft.office.excel|com.microsoft.office.apphost.LaunchActivity|<br>|Github|com.seasonfif.github|com.seasonfif.github.ui.activity.SplashScreenActivity|<br>|IT之家|com.ruanmei.ithome|com.ruanmei.ithome.ui.MainActivity|<br>|netkeeper|com.xinli.netkeeper|com.xinli.netkeeper.activitys.WelcomeActivity|<br>|ofo共享单车|so.ofo.labofo|so.ofo.labofo.activities.EntryActivity|<br>|QQ|com.tencent.mobileqq|com.tencent.mobileqq.activity.SplashActivity|<br>|RD Client Beta|com.microsoft.rdc.android.beta|com.microsoft.rdc.ui.activities.HomeActivity|<br>|S 换机助手|com.sec.android.easyMover|com.sec.android.easyMover.DistributionActivity|<br>|S 日历|com.android.calendar|com.android.calendar.AllInOneActivity|<br>|S Voice|com.samsung.voiceserviceplatform|com.samsung.voiceserviceplatform.ui.SVoiceMainActivity|<br>|Samsung Gear|com.samsung.android.app.watchmanager|com.samsung.android.app.watchmanager.setupwizard.SetupWizardWelcomeActivity|<br>|Super Pads|com.opalastudios.pads|com.opalastudios.pads.ui.MainActivity|<br>|Survival Online|com.gameline.survivalcraftfree|com.unity3d.player.UnityPlayerActivity|<br>|TapTap|com.taptap|com.play.taptap.ui.MainAct|<br>|UC浏览器|com.UCMobile|com.UCMobile.main.UCMobile|<br>|USIM卡应用|com.android.stk|com.android.stk.StkLauncherActivity|<br>|WiFi万能钥匙|com.snda.wifilocating|com.lantern.launcher.ui.MainActivity|<br>|Word|com.microsoft.office.word|com.microsoft.office.apphost.LaunchActivity|</p>
 
-
-<table>
-<thead>
-<tr>
-<th>应用</th>
-<th>pkg</th>
-<th>cls</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>阿里云</td>
-<td>com.alibaba.aliyun</td>
-<td>com.alibaba.aliyun.biz.login.WelcomeActivity</td>
-</tr>
-<tr>
-<td>爱奇艺</td>
-<td>com.qiyi.video</td>
-<td>com.qiyi.video.WelcomeActivity</td>
-</tr>
-<tr>
-<td>百度贴吧</td>
-<td>com.baidu.tieba</td>
-<td>com.baidu.tieba.LogoActivity</td>
-</tr>
-<tr>
-<td>百度网盘</td>
-<td>com.baidu.netdisk</td>
-<td>com.baidu.netdisk.ui.Navigate</td>
-</tr>
-<tr>
-<td>备忘录</td>
-<td>com.samsung.android.app.memo</td>
-<td>com.samsung.android.app.memo.Main</td>
-</tr>
-<tr>
-<td>哔哩哔哩</td>
-<td>tv.danmaku.bili</td>
-<td>tv.danmaku.bili.ui.splash.SplashActivity</td>
-</tr>
-<tr>
-<td>车来了</td>
-<td>com.ygkj.chelaile.standard</td>
-<td>dev.xesam.chelaile.app.module.func.SplashActivity</td>
-</tr>
-<tr>
-<td>电话</td>
-<td>com.android.contacts</td>
-<td>com.android.dialer.DialtactsActivity</td>
-</tr>
-<tr>
-<td>电子邮件</td>
-<td>com.samsung.android.email.provider</td>
-<td>com.samsung.android.email.ui.activity.MessageListXL</td>
-</tr>
-<tr>
-<td>盖乐世空间</td>
-<td>com.samsung.android.voc</td>
-<td>com.samsung.android.voc.LauncherActivity</td>
-</tr>
-<tr>
-<td>高德地图</td>
-<td>com.autonavi.minimap</td>
-<td>com.autonavi.map.activity.SplashActivity</td>
-</tr>
-<tr>
-<td>高铁管家12306火车票</td>
-<td>com.gtgj.view</td>
-<td>com.gtgj.view.LaunchActivity</td>
-</tr>
-<tr>
-<td>黑域</td>
-<td>me.piebridge.brevent</td>
-<td>me.piebridge.brevent.ui.BreventActivity</td>
-</tr>
-<tr>
-<td>计算器</td>
-<td>com.sec.android.app.popupcalculator</td>
-<td>com.sec.android.app.popupcalculator.Calculator</td>
-</tr>
-<tr>
-<td>交管12123</td>
-<td>com.tmri.app.main</td>
-<td>com.tmri.app.ui.activity.TmriActivity</td>
-</tr>
-<tr>
-<td>京东</td>
-<td>com.jingdong.app.mall</td>
-<td>com.jingdong.app.mall.main.MainActivity</td>
-</tr>
-<tr>
-<td>联系人</td>
-<td>com.android.contacts</td>
-<td>com.android.contacts.activities.PeopleActivity</td>
-</tr>
-<tr>
-<td>猎吧出行</td>
-<td>com.example.liabarcarandroid</td>
-<td>com.liabarcar.guide.SplashActivity</td>
-</tr>
-<tr>
-<td>浏览器</td>
-<td>com.sec.android.app.sbrowser</td>
-<td>com.sec.android.app.sbrowser.SBrowserMainActivity</td>
-</tr>
-<tr>
-<td>录音机</td>
-<td>com.sec.android.app.voicenote</td>
-<td>com.sec.android.app.voicenote.main.VNMainActivity</td>
-</tr>
-<tr>
-<td>南昌航空大学</td>
-<td>com.eteasun.nanhang</td>
-<td>com.eteasun.nanhang.activity.WelcomeActvity</td>
-</tr>
-<tr>
-<td>全民K歌</td>
-<td>com.tencent.karaoke</td>
-<td>com.tencent.karaoke.module.splash.ui.SplashBaseActivity</td>
-</tr>
-<tr>
-<td>三星健康</td>
-<td>com.sec.android.app.shealth</td>
-<td>com.samsung.android.app.shealth.home.HomeMainActivity</td>
-</tr>
-<tr>
-<td>三星生活助手</td>
-<td>com.samsung.android.app.sreminder</td>
-<td>com.samsung.android.app.sreminder.phone.cardlist.SReminderActivity</td>
-</tr>
-<tr>
-<td>三星视频</td>
-<td>com.samsung.android.onlinevideo</td>
-<td>com.samsung.android.onlinevideo.list.activity.VideoList</td>
-</tr>
-<tr>
-<td>三星音乐</td>
-<td>com.samsung.android.app.music.chn</td>
-<td>com.samsung.android.app.music.common.activity.MusicMainActivity</td>
-</tr>
-<tr>
-<td>三星阅读</td>
-<td>com.mci.smagazine</td>
-<td>com.chaozh.iReader.ui.activity.WelcomeActivity</td>
-</tr>
-<tr>
-<td>三星云</td>
-<td>com.samsung.multidevicecloud</td>
-<td>com.kanbox.wp.Main</td>
-</tr>
-<tr>
-<td>扫描全能王</td>
-<td>com.intsig.camscanner</td>
-<td>com.intsig.camscanner.WelcomeActivity</td>
-</tr>
-<tr>
-<td>扇贝单词</td>
-<td>com.shanbay.words</td>
-<td>com.shanbay.words.startup.SplashActivity</td>
-</tr>
-<tr>
-<td>设置</td>
-<td>com.android.settings</td>
-<td>com.android.settings.Settings</td>
-</tr>
-<tr>
-<td>时钟</td>
-<td>com.sec.android.app.clockpackage</td>
-<td>com.sec.android.app.clockpackage.ClockPackage</td>
-</tr>
-<tr>
-<td>手机淘宝</td>
-<td>com.taobao.taobao</td>
-<td>com.taobao.tao.welcome.Welcome</td>
-</tr>
-<tr>
-<td>手机营业厅</td>
-<td>com.sinovatech.unicom.ui</td>
-<td>com.sinovatech.unicom.ui.WelcomeClient</td>
-</tr>
-<tr>
-<td>搜狐视频</td>
-<td>com.sohu.sohuvideo</td>
-<td>com.sohu.sohuvideo.FirstNavigationActivityGroup</td>
-</tr>
-<tr>
-<td>腾讯动漫</td>
-<td>com.qq.ac.android</td>
-<td>com.qq.ac.android.view.activity.SplashActivity</td>
-</tr>
-<tr>
-<td>腾讯课堂</td>
-<td>com.tencent.edu</td>
-<td>com.tencent.edu.module.SplashActivity</td>
-</tr>
-<tr>
-<td>腾讯视频</td>
-<td>com.tencent.qqlive</td>
-<td>com.tencent.qqlive.ona.activity.WelcomeActivity</td>
-</tr>
-<tr>
-<td>通卡宝</td>
-<td>com.nci.tkb</td>
-<td>com.nci.tkb.ui.SplashActivity</td>
-</tr>
-<tr>
-<td>网易有道词典</td>
-<td>com.youdao.dict</td>
-<td>com.youdao.dict.activity.DictSplashActivity</td>
-</tr>
-<tr>
-<td>网易云音乐</td>
-<td>com.netease.cloudmusic</td>
-<td>com.netease.cloudmusic.activity.LoadingActivity</td>
-</tr>
-<tr>
-<td>微博</td>
-<td>com.sina.weibo</td>
-<td>com.sina.weibo.SplashActivity</td>
-</tr>
-<tr>
-<td>微信</td>
-<td>com.tencent.mm</td>
-<td>com.tencent.mm.ui.LauncherUI</td>
-</tr>
-<tr>
-<td>我的文件</td>
-<td>com.sec.android.app.myfiles</td>
-<td>com.sec.android.app.myfiles.common.MainActivity</td>
-</tr>
-<tr>
-<td>闲鱼</td>
-<td>com.taobao.idlefish</td>
-<td>com.taobao.fleamarket.home.activity.InitActivity.Round</td>
-</tr>
-<tr>
-<td>相册</td>
-<td>com.sec.android.gallery3d</td>
-<td>com.sec.android.gallery3d.app.GalleryOpaqueActivity</td>
-</tr>
-<tr>
-<td>相机</td>
-<td>com.sec.android.app.camera</td>
-<td>com.sec.android.app.camera.Camera</td>
-</tr>
-<tr>
-<td>小米VR</td>
-<td>com.mi.dlabs.vr.hulk</td>
-<td>com.mi.dlabs.vr.hulk.launch.HulkLaunchActivity</td>
-</tr>
-<tr>
-<td>信息</td>
-<td>com.android.mms</td>
-<td>com.android.mms.ui.ConversationComposer</td>
-</tr>
-<tr>
-<td>一键锁屏</td>
-<td>com.yujing.lockscreen</td>
-<td>com.yujing.lockscreen.MainActivity</td>
-</tr>
-<tr>
-<td>应用商店</td>
-<td>com.sec.android.app.samsungapps</td>
-<td>com.sec.android.app.samsungapps.SamsungAppsMainActivity</td>
-</tr>
-<tr>
-<td>影梭</td>
-<td>com.github.shadowsocks</td>
-<td>com.github.shadowsocks.Shadowsocks</td>
-</tr>
-<tr>
-<td>优酷</td>
-<td>com.youku.phone</td>
-<td>com.youku.phone.ActivityWelcome</td>
-</tr>
-<tr>
-<td>悦动圈</td>
-<td>com.yuedong.sport</td>
-<td>com.yuedong.sport.main.WelcomeActivity_</td>
-</tr>
-<tr>
-<td>支付宝</td>
-<td>com.eg.android.AlipayGphone</td>
-<td>com.eg.android.AlipayGphone.AlipayLogin</td>
-</tr>
-<tr>
-<td>知乎</td>
-<td>com.zhihu.android</td>
-<td>com.zhihu.android.app.ui.activity.MainActivity</td>
-</tr>
-<tr>
-<td>智能管理器</td>
-<td>com.samsung.android.sm</td>
-<td>com.samsung.android.sm.app.dashboard.SmartManagerDashBoardActivity</td>
-</tr>
-<tr>
-<td>主题商店</td>
-<td>com.samsung.android.themestore</td>
-<td>com.samsung.android.themestore.activity.Launcher</td>
-</tr>
-<tr>
-<td>租八戒</td>
-<td>com.rentpig.customer</td>
-<td>com.rentpig.customer.main.WelcomeActivity</td>
-</tr>
-<tr>
-<td>AChm Free</td>
-<td>com.pchen.achmfree</td>
-<td>com.pchen.achm.MainActivity</td>
-</tr>
-<tr>
-<td>Chrome</td>
-<td>com.android.chrome</td>
-<td>com.google.android.apps.chrome.Main</td>
-</tr>
-<tr>
-<td>ES文件浏览器</td>
-<td>com.estrongs.android.pop</td>
-<td>com.estrongs.android.pop.app.openscreenad.NewSplashActivity</td>
-</tr>
-<tr>
-<td>Excel</td>
-<td>com.microsoft.office.excel</td>
-<td>com.microsoft.office.apphost.LaunchActivity</td>
-</tr>
-<tr>
-<td>Github</td>
-<td>com.seasonfif.github</td>
-<td>com.seasonfif.github.ui.activity.SplashScreenActivity</td>
-</tr>
-<tr>
-<td>IT之家</td>
-<td>com.ruanmei.ithome</td>
-<td>com.ruanmei.ithome.ui.MainActivity</td>
-</tr>
-<tr>
-<td>netkeeper</td>
-<td>com.xinli.netkeeper</td>
-<td>com.xinli.netkeeper.activitys.WelcomeActivity</td>
-</tr>
-<tr>
-<td>ofo共享单车</td>
-<td>so.ofo.labofo</td>
-<td>so.ofo.labofo.activities.EntryActivity</td>
-</tr>
-<tr>
-<td>QQ</td>
-<td>com.tencent.mobileqq</td>
-<td>com.tencent.mobileqq.activity.SplashActivity</td>
-</tr>
-<tr>
-<td>RD Client Beta</td>
-<td>com.microsoft.rdc.android.beta</td>
-<td>com.microsoft.rdc.ui.activities.HomeActivity</td>
-</tr>
-<tr>
-<td>S 换机助手</td>
-<td>com.sec.android.easyMover</td>
-<td>com.sec.android.easyMover.DistributionActivity</td>
-</tr>
-<tr>
-<td>S 日历</td>
-<td>com.android.calendar</td>
-<td>com.android.calendar.AllInOneActivity</td>
-</tr>
-<tr>
-<td>S Voice</td>
-<td>com.samsung.voiceserviceplatform</td>
-<td>com.samsung.voiceserviceplatform.ui.SVoiceMainActivity</td>
-</tr>
-<tr>
-<td>Samsung Gear</td>
-<td>com.samsung.android.app.watchmanager</td>
-<td>com.samsung.android.app.watchmanager.setupwizard.SetupWizardWelcomeActivity</td>
-</tr>
-<tr>
-<td>Super Pads</td>
-<td>com.opalastudios.pads</td>
-<td>com.opalastudios.pads.ui.MainActivity</td>
-</tr>
-<tr>
-<td>Survival Online</td>
-<td>com.gameline.survivalcraftfree</td>
-<td>com.unity3d.player.UnityPlayerActivity</td>
-</tr>
-<tr>
-<td>TapTap</td>
-<td>com.taptap</td>
-<td>com.play.taptap.ui.MainAct</td>
-</tr>
-<tr>
-<td>UC浏览器</td>
-<td>com.UCMobile</td>
-<td>com.UCMobile.main.UCMobile</td>
-</tr>
-<tr>
-<td>USIM卡应用</td>
-<td>com.android.stk</td>
-<td>com.android.stk.StkLauncherActivity</td>
-</tr>
-<tr>
-<td>WiFi万能钥匙</td>
-<td>com.snda.wifilocating</td>
-<td>com.lantern.launcher.ui.MainActivity</td>
-</tr>
-<tr>
-<td>Word</td>
-<td>com.microsoft.office.word</td>
-<td>com.microsoft.office.apphost.LaunchActivity</td>
-</tr></tbody></table>
 
       
 
@@ -779,6 +369,15 @@
 
 
 <nav id="article-nav">
+  
+    <a  href="/2017/11/12/Android/MP3播放器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Android学习笔记 (三)   MP3播放器
+        
+      </div>
+    </a>
   
   
     <a  href="/2017/10/18/VBA/Excel 宏命令处理/" id="article-nav-older" class="article-nav-link-wrap">
@@ -868,7 +467,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a  href="/2017/11/12/Android/MP3播放器/" title="上一篇: Android学习笔记 (三)   MP3播放器">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -877,7 +478,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/20/Android/Android 如何唤醒第三方APP/">Android学习笔记 (二)   Intent唤醒其他Activity或APP</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/18/VBA/Excel 宏命令处理/">Excel 宏命令处理(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/17/Java/Java Robot类的一些应用/">Java学习笔记 (一)   基于Robot类的一些自动测试类的一些应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/23/Python学习笔记/scrapy框架/">Python学习笔记 (四)  安装scrapy框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/Android/Android 按钮事件的五种处理方法/">Android学习笔记 (一)   按钮事件处理的五种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/29/其他/四六级查询准考证方法/">查四六级准考证号的一种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Python学习笔记/Python 实战/">Python学习笔记 (三)  简单爬虫实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/10/数学建模/论文格式分析鉴赏/">数学建模论文格式分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/22/Python学习笔记/第三方库安装/">Python学习笔记 (二)  第三方库安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/22/Python学习笔记/初识Python/">Python学习笔记 (一)  初识Python</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/10/UWP学习笔记/什么是XAML/">UWP学习笔记 (三)   XAML界面原理和语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/UWP学习笔记/开发环境及项目工程解析/">UWP学习笔记 (二)   UWP开发环境及项目工程解析</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/08/UWP学习笔记/什么是UWP/">UWP学习笔记 (一) 初识UWP</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/05/PowerShsell/PowerShell篇  (一)初识PowerShell/">PowerShell篇 (一) 初识PowerShell</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/为什么要建立这个博客/">我为什么要建立这个博客</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/Python学习笔记/抓取女神微博动态并保存到数据库/">Python小实践   微博爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/12/Android/MP3播放器/">Android学习笔记 (三)   MP3播放器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/20/Android/Android 如何唤醒第三方APP/">Android学习笔记 (二)   Intent唤醒其他Activity或APP</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/18/VBA/Excel 宏命令处理/">Excel 宏命令处理(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/17/Java/Java Robot类的一些应用/">Java学习笔记 (一)   基于Robot类的一些自动测试类的一些应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/23/Python学习笔记/scrapy框架/">Python学习笔记 (四)  安装scrapy框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/Android/Android 按钮事件的五种处理方法/">Android学习笔记 (一)   按钮事件处理的五种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/29/其他/四六级查询准考证方法/">查四六级准考证号的一种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Python学习笔记/Python 实战/">Python学习笔记 (三)  简单爬虫实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/10/数学建模/论文格式分析鉴赏/">数学建模论文格式分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/22/Python学习笔记/第三方库安装/">Python学习笔记 (二)  第三方库安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/22/Python学习笔记/初识Python/">Python学习笔记 (一)  初识Python</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/10/UWP学习笔记/什么是XAML/">UWP学习笔记 (三)   XAML界面原理和语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/UWP学习笔记/开发环境及项目工程解析/">UWP学习笔记 (二)   UWP开发环境及项目工程解析</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/08/UWP学习笔记/什么是UWP/">UWP学习笔记 (一) 初识UWP</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/05/PowerShsell/PowerShell篇  (一)初识PowerShell/">PowerShell篇 (一) 初识PowerShell</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/为什么要建立这个博客/">我为什么要建立这个博客</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
@@ -917,7 +518,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2017 lovemefan
+                &copy; 2018 lovemefan
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
