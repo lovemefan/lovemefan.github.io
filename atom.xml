@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="lovemefan.win/"/>
-  <updated>2018-09-05T06:45:29.820Z</updated>
+  <updated>2018-09-06T07:35:47.185Z</updated>
   <id>lovemefan.win/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>视频解析工具分享</title>
+    <link href="lovemefan.win/post/ivideo/index.html%20%202018/09/06/ivideo/"/>
+    <id>lovemefan.win/post/ivideo/index.html  2018/09/06/ivideo/</id>
+    <published>2018-09-06T07:26:00.000Z</published>
+    <updated>2018-09-06T07:35:47.185Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ivideo"><a href="#ivideo" class="headerlink" title="ivideo"></a>ivideo</h1><p>发现一款好东西当然要分享出来了<br><a href="https://github.com/phobal/ivideo" target="_blank" rel="external">Windows,Linux,Mac原项目链接</a><br><a href="https://github.com/CrazyDudo/fvip" target="_blank" rel="external">安卓版原项目链接</a><br><a href="https://github.com/alphardex/ivideo-python" target="_blank" rel="external">网页版原项目链接</a></p><h2 id="产品介绍"><a href="#产品介绍" class="headerlink" title="产品介绍"></a>产品介绍</h2><blockquote><p>基于 Electron 开发的跨平台客户端版本的视频播放器，该播放器包括国内主流视频平台视频资源，你不用去单独下载各个平台的客户端，只需要使用这一个客户端就能查看所有平台的视频，并且内置了各大视频网站 VIP 资源。</p></blockquote><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol><li>下载客户端 </li></ol><ul><li><a href="https://github.com/phobal/ivideo/releases/download/1.1.1/ivideo-1.1.1-mac.zip" target="_blank" rel="external">Mac</a></li><li><a href="https://github.com/phobal/ivideo/releases/download/1.1.1/ivideo-1.1.1-win.zip" target="_blank" rel="external">Windows</a></li><li><a href="https://github.com/phobal/ivideo/releases/download/1.0.0/linux-unpacked.v1.0.0.zip" target="_blank" rel="external">Linux</a></li><li><a href="https://fir.im/qu73" target="_blank" rel="external">Android</a> </li><li><a href="https://ivideo-python.herokuapp.com/" target="_blank" rel="external">网页版</a></li><li>不好意思没有ios版的[dog][dog]</li></ul><ol><li>选择视频资源  </li></ol><p>比方说看腾讯视频上的 VIP 才能看的《下一站,别离》</p><p><img src="https://github.com/phobal/ivideo/blob/master/resources/showcase01.jpg?raw=true" alt=""></p><p>点击进去以后提示需要开通VIP才能看</p><p><img src="https://github.com/phobal/ivideo/blob/master/resources/showcase02.jpg?raw=true" alt=""></p><ol><li>选择资源播放接口  </li></ol><p><img src="https://github.com/phobal/ivideo/blob/master/resources/showcase03.jpg?raw=true" alt=""></p><p>点击【确定】按钮就可以播放了，如果遇到无法播放的情况，请多换几条线路试试</p><p><img src="https://github.com/phobal/ivideo/blob/master/resources/showcase04.jpg?raw=true" alt=""></p><h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul><li>Electron</li><li>React</li><li>Redux</li></ul><h2 id="如何启动"><a href="#如何启动" class="headerlink" title="如何启动"></a>如何启动</h2><blockquote><p>node version &gt;= 7.6</p></blockquote><ol><li>clone 项目到本地</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">git <span class="built_in">clone</span> https://github.com/phobal/ivideo.git</div></pre></td></tr></table></figure><ol><li>进入项目 <code>cd ivideo</code></li><li>安装依赖 <code>yarn install</code>(如果没有的话，请全局安装yarn, <code>npm i yarn -g</code>)</li><li>打开开发环境 <code>yarn start</code></li></ol><h2 id="如何编译"><a href="#如何编译" class="headerlink" title="如何编译"></a>如何编译</h2><ul><li>编译全平台 <code>yarn package-all</code></li><li>编译当前平台 <code>yarn package</code></li><li>windows: <code>yarn package-win</code></li><li>Linux <code>yarn package-linux</code></li></ul><p>编译出来的包都放在 <code>release</code> 目录下</p><p>该项目是基于 <a href="https://github.com/chentsulin/electron-react-boilerplate" target="_blank" rel="external">electron-react-boilerplate</a> 脚手架 进行创建，感谢 @<a href="https://github.com/chentsulin" target="_blank" rel="external">chentsulin</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;ivideo&quot;&gt;&lt;a href=&quot;#ivideo&quot; class=&quot;headerlink&quot; title=&quot;ivideo&quot;&gt;&lt;/a&gt;ivideo&lt;/h1&gt;&lt;p&gt;发现一款好东西当然要分享出来了&lt;br&gt;&lt;a href=&quot;https://github.com/phobal/
+      
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="lovemefan.win/tags/%E5%85%B6%E4%BB%96/"/>
+    
+      <category term="学习资料" scheme="lovemefan.win/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    
+  </entry>
   
   <entry>
     <title>后端架构师技术图谱 --来自github</title>
@@ -469,24 +494,6 @@
     
     
       <category term="PowerShell" scheme="lovemefan.win/tags/PowerShell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我为什么要建立这个博客</title>
-    <link href="lovemefan.win/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%BB%BA%E7%AB%8B%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/index.html%20%202017/07/04/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%BB%BA%E7%AB%8B%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
-    <id>lovemefan.win/post/为什么要建立这个博客/index.html  2017/07/04/为什么要建立这个博客/</id>
-    <published>2017-07-04T13:32:00.000Z</published>
-    <updated>2017-07-07T02:47:01.590Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong> 我为什么要建立这个博客：</strong> <excerpt in="" index="" |="" 首页摘要=""><br>建立博客的原因<br><a id="more"></a></excerpt></p><the rest="" of="" contents="" |="" 余下全文=""><h1 id="为什么要建立这个博客"><a href="#为什么要建立这个博客" class="headerlink" title="为什么要建立这个博客"></a>为什么要建立这个博客</h1><p><code>作者：lovemefan</code>  <a href="www.github.com/lovemefan">我的GitHub</a></p><blockquote><p> &#160; &#160;&#160; &#160;我现在是一名即将大三的软件的学生。对编程还谈得上热爱，但至今也只能承认懂得点皮毛。为什么我要写这个博客？根本原因还是“懒”。我需要一个能够鞭策我一直坚持下去的东西。不过我也承认有一点点装B的嫌疑。我个人性格有点不羁，不喜欢按部就班，墨守成规。总想着做点疯狂的事。兴趣与时间总是矛盾的，可是时间又是从海绵里挤出来的。想想大一大二就这样“嗖”一般的过掉了…掉了…了。东西没学到多少，时间就快没了。看到有的同学能做一个看起来就很牛逼的程序，然后讲一堆从来没听过的专业术语。“卧槽！卧槽！！！”，“厉害了，我的哥”，“哇，大神，带我飞”，像这样的话没少听。一般这种时候我都会嫉妒一下。“TM为什么我不会”，“不过，不会也正常，我TM又不是神”，“妈蛋，下次去学，嗯！一定要学会”，“好像也就这样了，先放一放吧”。大多数情况下这件事就被无限延期了。<br>  &#160; &#160;&#160; &#160;首先，我总结了一个原因——懒。这种东西确实是人类的天敌，当然不排除某些勤奋已经成了日常的hentai。我有一些类似的经历，写作业写到两三点停不下来，还像打了鸡血一样很兴奋，鬼知道发生了什么。最长的一次在图书馆呆了13多个小时，从早上8点到晚上9点半，丝毫不想走。这种接近痴狂的人生，我个人觉得还蛮不错的。但是，但是，但是我又双叒叕被懒惰打败了，一不小心就荒废了下学业。结果就是期末成绩无情的嘲讽。懒惰这东西迟早，一定，必须面对。所以我觉得有必要做些事情，比如维护这博客。<br> &#160; &#160;&#160; &#160;其次，我吐槽下大学现在这个机制不是我想要的。大学也读了一半了，大多数人是这么过的：“上课可以不听，下课我看一下就好了。”，“这题好像老师讲过，不过我忘了。”“学习，学个屁”，“这次考试考哪些重点，帮我画一下”，“最后一个礼拜复习，祈祷不挂”，“复习什么，大家一起挂”，“成绩出来了，吐血，80多”（MD，老子一巴掌。。。）。然而结果不是我所期望的。考试这种东西确实是有存在的必要，但现在的考试总感觉变了味。老师说什么会考，就考什么，可能还是去年的原题。只要刷几套往年试卷，就可以考得很好，于是更多的人在钻研怎么“考试”，而不是解决问题。两年下来，你是更擅长考试，还是更擅长你的专业知识。我非常敬佩那些不以考试为目的教学的老师。就比如说那个陈胖子（没事，他看不到），他上的Java和c语言数据结构还是很有分量的。<br> &#160; &#160;&#160; &#160;假设大学四年我都这样过的话，满足吗？能力能提高多少呢？到底能学到多少东西呢？我现在可以C，C++，C#，Java，JavaScript，Matlab，Python…写一个Hello world，这样够吗?有人会说可以了，已经很不错了。可是野心不大一点，目标不远一点，不疯狂一点还是我的风格吗？现在还不疯狂一把，以后还有机会吗？你能保证未来不会因现在后悔吗？<br>所以，我建立了在个博客，并且想维护它。我想多学点东西。现在的初心是既可以记录学习的点滴，也可以每时每刻都鞭策着我，因为每更新一次这个东西，就会得到一种“快感”，成就感。更新GitHub时也是一样。私心还是有的，当然希望被人关注了，肯定是越多越好了。</p></blockquote><h2 id="博客的内容"><a href="#博客的内容" class="headerlink" title="博客的内容"></a>博客的内容</h2><p>我尽量能写就多写，最近在知乎，CDNS，简书…中看到大量IT干货，激发了我极大的兴趣<br>所以想着现在来建立这博客也不迟，算得上是学习了一种记录和鞭策吧</p><ul><li>一些学习过程中的问题，解决思路方法。</li><li>我感兴趣的事物，可能以后会写测评。</li><li>GitHub，知乎,IT之家等 一些趣味知识。</li><li>开发UWP。我曾经是一名wper（Lumia 1020），早在很久之前就打算学习UWP了，我希望能够坚持下去，尽管可能没有太多的时间和精力。就算是龟速更新，我也不会停止学习的。<h2 id="计划列表"><a href="#计划列表" class="headerlink" title="计划列表"></a>计划列表</h2></li><li>UWP，Android，web(大三必修)</li><li>UE4(虚幻4)，unity  (项目所需和个人兴趣爱好)</li><li>学些脚本语言，待定：PowerShell，JavaScript等</li><li>待定</li></ul></the>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt; 我为什么要建立这个博客：&lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;建立博客的原因&lt;br&gt;
-    
-    </summary>
-    
     
   </entry>
   
