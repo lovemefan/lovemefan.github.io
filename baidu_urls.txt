@@ -1,1 +1,1 @@
-lovemefan.win/post/为什么要备案/index.html  2018/10/12/为什么要备案/
+lovemefan.win/post/其他/Ubuntu19 下使用pip安装好包以后，在Pycharm中依然无法使用的解决办法/index.html  2020/03/06/其他/Ubuntu19 下使用pip安装好包以后，在Pycharm中依然无法使用的解决办法/

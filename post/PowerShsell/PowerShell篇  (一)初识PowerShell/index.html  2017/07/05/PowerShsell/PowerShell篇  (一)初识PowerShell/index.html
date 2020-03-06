@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css"/>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="PowerShell篇 (一) 初识PowerShell： 什么是PowerShell">
+<meta name="keywords" content="PowerShell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PowerShell篇 (一) 初识PowerShell">
+<meta property="og:url" content="lovemefan.win/post/PowerShsell/PowerShell篇  (一)初识PowerShell/index.html  2017/07/05/PowerShsell/PowerShell篇  (一)初识PowerShell/index.html">
+<meta property="og:site_name" content="lovemefan的博客">
+<meta property="og:description" content="PowerShell篇 (一) 初识PowerShell： 什么是PowerShell">
+<meta property="og:image" content="http://oskhhyaq3.bkt.clouddn.com/blog/170705/IKDe87048g.jpg?imageslim">
+<meta property="og:image" content="http://oskhhyaq3.bkt.clouddn.com/blog/170705/bfiiJCEHd4.jpg?imageslim">
+<meta property="og:image" content="http://oskhhyaq3.bkt.clouddn.com/blog/170705/CJi70f9ahF.png?imageslim">
+<meta property="og:image" content="http://oskhhyaq3.bkt.clouddn.com/blog/170705/B8IDAdFlm4.png?imageslim">
+<meta property="og:image" content="http://oskhhyaq3.bkt.clouddn.com/blog/170705/526ijlFjLJ.png?imageslim">
+<meta property="og:image" content="http://oskhhyaq3.bkt.clouddn.com/blog/170705/CIBlH2i1f7.png?imageslim">
+<meta property="og:image" content="http://oskhhyaq3.bkt.clouddn.com/blog/170705/6AghbjEgAg.png?imageslim">
+<meta property="og:image" content="http://oskhhyaq3.bkt.clouddn.com/blog/170705/8h0kd2FD21.png?imageslim">
+<meta property="og:image" content="http://oskhhyaq3.bkt.clouddn.com/blog/170705/LcIe6FFlJ4.png?imageslim">
+<meta property="og:updated_time" content="2017-07-07T02:46:11.707Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PowerShell篇 (一) 初识PowerShell">
+<meta name="twitter:description" content="PowerShell篇 (一) 初识PowerShell： 什么是PowerShell">
+<meta name="twitter:image" content="http://oskhhyaq3.bkt.clouddn.com/blog/170705/IKDe87048g.jpg?imageslim">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="lovemefan的博客" type="application/atom+xml"/>
+
+
+
+
+  <link rel="canonical" href="lovemefan.win/post/PowerShsell/PowerShell篇  (一)初识PowerShell/  2017/07/05/PowerShsell/PowerShell篇  (一)初识PowerShell/index.html"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>PowerShell篇 (一) 初识PowerShell | lovemefan的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lovemefan的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">梦里花落知多少</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="lovemefan.win/post/PowerShsell/PowerShell篇  (一)初识PowerShell/index.html  2017/07/05/PowerShsell/PowerShell篇  (一)初识PowerShell/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lovemefan"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/avatar.png"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lovemefan的博客"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">PowerShell篇 (一) 初识PowerShell
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+		
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-07-05 20:53:23" itemprop="dateCreated datePublished" datetime="2017-07-05T20:53:23+08:00">2017-07-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-07-07 10:46:11" itemprop="dateModified" datetime="2017-07-07T10:46:11+08:00">2017-07-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+              
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/post/PowerShsell/PowerShell篇  (一)初识PowerShell/index.html  2017/07/05/PowerShsell/PowerShell篇  (一)初识PowerShell/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="post/PowerShsell/PowerShell篇  (一)初识PowerShell/index.html  2017/07/05/PowerShsell/PowerShell篇  (一)初识PowerShell/" itemprop="commentCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong> PowerShell篇 (一) 初识PowerShell：</strong> <excerpt in="" index="" |="" 首页摘要=""><br>什么是PowerShell<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h1 id="初识PowerShell"><a href="#初识PowerShell" class="headerlink" title="初识PowerShell"></a>初识PowerShell</h1><p><code>作者：lovemefan</code> <code>以下资料收集于IT之家和知乎</code></p>
+<h2 id="PowerShell的邂逅"><a href="#PowerShell的邂逅" class="headerlink" title="PowerShell的邂逅"></a>PowerShell的邂逅</h2><p>&#160;&#160;&#160;&#160;在我搭建我的博客的时候，cmd命令肯定是少不了的。除了cmd我们还可以选择Git Bash和PowerShell。<br>Git Bash是Git自带的一个命令行工具，用来上传，克隆等一些GitHub的操作。我之前也只知道Power Shell也是命令行，用它部署过离线的<a href="http://baike.baidu.com/link?url=J5GeaQ_aSSMscd2pdx3O7nv1xTjZ99hw4ppIODqWFTtGFqHuxw13ppv9HviTZ8IglPkdRudcQb4-expkEoxC_a" target="_blank" rel="external">UWP</a>，但平常不太会用所以没太在意。我只知道是微软为了替代cmd而特意在Windows 10里添加的新功能 。但在我使用Windows 10 创意者 的时候，正如往常使用鼠标右键+Shift ，本来是<strong>“从此处打开命令窗口”</strong>，结果就是没找到。反而这样显示<br><img src="http://oskhhyaq3.bkt.clouddn.com/blog/170705/IKDe87048g.jpg?imageslim" alt="mark"><br>后来发现这是微软故意而为之的</p>
+<h2 id="什么是PowerShell"><a href="#什么是PowerShell" class="headerlink" title="什么是PowerShell"></a>什么是PowerShell</h2><blockquote>
+<p>&#160;&#160;&#160;&#160;Windows PowerShell 是一种命令行外壳程序和脚本环境，使命令行用户和脚本编写者可以利用 .NET Framework的强大功能。<br>&#160;&#160;&#160;&#160;它引入了许多非常有用的新概念，从而进一步扩展了您在 Windows 命令提示符和 Windows Script Host 环境中获得的知识和创建的脚本。<br>&#160;&#160;&#160;&#160;Windows PowerShell v3将伴随着MicrosoftHyper-V3.0和Windows Server 2012发布。PowerShell v3是一个Windows任务自动化的框架，它由一个命令行shell和内置在这个.NET框架上的编程语言组成。<br>&#160;&#160;&#160;&#160;PowerShell v3采用新的cmdlet让管理员能够更深入到系统进程中，这些进程可以制作成可执行的文件或脚本（script）。一条cmdlet是一条轻量命令，Windows PowerShell运行时间在自动化脚本的环境里调用它。Cmdlet包括显示当前目录的Get-Location，访问文件内容的Get-Content和结束运行进程的Stop-Process。<br>&#160;&#160;&#160;&#160;PowerShell v3在Windows Server 8中装载了Windows Management Framework 3.0。PowerShell运行时间也能嵌入到其它应用。——百度百科</p>
+</blockquote>
+<p><a href="https://msdn.microsoft.com/en-us/powershell" target="_blank" rel="external">微软PowerShell官网</a></p>
+<p>&#160;&#160;&#160;&#160;从Windows10创意者更新开始，PowerShell正式上位替换了命令提示符CMD。不论是Windows+X右键超级菜单，还是Shift+文件夹空白处右键，又或在文件资源管理器文件菜单中，都没有命令提示符CMD的身影了，全部都由PowerShell取而代之了。长期使用CMD的Windows系统管理员或Windows命令行极客恐怕一时不能适应，使用CMD都只能去开始菜单-所有应用-Windows系统-命令提示符打开使用，或者Windows+R键然后输入cmd，或者在小娜输入框输入cmd，再或者在PowerShell中输入cmd(看来又绕回来了)。藏得这么深，显然是不想让人用了啊。不仅如此，Power Shell还登陆了Linux和MacOS<br><a href="https://zhuanlan.zhihu.com/p/26346821?utm_source=qq&amp;utm_medium=social" target="_blank" rel="external">在Linux下安装PowerShell</a><br>PoweShell上位图如下<br><img src="http://oskhhyaq3.bkt.clouddn.com/blog/170705/bfiiJCEHd4.jpg?imageslim" alt="mark"><br>&#160;&#160;&#160;&#160;问题来了，PowerShell这货凭什么力压CMD，强行上位？如果你之前试用过PowerShell，相信它一定没有给你什么好印象。打开慢！反应慢！命令还陌生！还动不动就弹一大堆谁都看不懂错误，PowerShell究竟凭什么在Windows10创意者更新中替代命令提示符CMD呢？微软脑抽了？<br>微软没有脑抽，PowerShell是凭借其强大的功能替换CMD的。这里要先说明以下PowerShell究竟是什么东西，或者它究竟是不是东西？<br>&#160;&#160;&#160;&#160;Windows PowerShell不是东西，它是专为系统管理员设计的新Windows命令行shell，它包括交互式提示和脚本环境。PowerShell定义很多命令与操作系统，特别是与文件系统交互，能够启动应用程序，甚至操纵应用程序；PowerShell允许将几个命令组合起来放到文件里执行，实现文件级的重用，也就是说有脚本的性质；PowerShell能够充分利用.Net类型和COM对象，来简单地与各种系统交互，完成各种复杂的、自动化的操作。<br>&#160;&#160;&#160;&#160;用人话说就是CMD能做的PowerShell都能做，CMD不能做的Powershell也能做。就是这么自信！不信？赶紧打开PowerShell把下面的命令复制进去，看看它干了什么事，然后你用CMD做出来吧！<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># create new excel instance</span></div><div class="line"><span class="variable">$objExcel</span> = <span class="built_in">New-Object</span> -comobject Excel.Application</div><div class="line"><span class="variable">$objExcel</span>.Visible = <span class="literal">$True</span></div><div class="line"><span class="variable">$objWorkbook</span> = <span class="variable">$objExcel</span>.Workbooks.Add()</div><div class="line"><span class="variable">$objWorksheet</span> = <span class="variable">$objWorkbook</span>.Worksheets.Item(<span class="number">1</span>)</div><div class="line"><span class="comment"># write information to the excel file</span></div><div class="line"><span class="variable">$i</span> = <span class="number">0</span></div><div class="line"><span class="variable">$first10</span> = (ps | sort ws -Descending | select -first <span class="number">10</span>)</div><div class="line"><span class="variable">$first10</span> | <span class="keyword">foreach</span> -Process &#123;<span class="variable">$i</span>++; <span class="variable">$objWorksheet</span>.Cells.Item(<span class="variable">$i</span>,<span class="number">1</span>) = <span class="variable">$_</span>.name; <span class="variable">$objWorksheet</span>.Cells.Item(<span class="variable">$i</span>,<span class="number">2</span>) = <span class="variable">$_</span>.ws&#125;</div><div class="line"><span class="variable">$otherMem</span> = (ps | measure ws -s).Sum - (<span class="variable">$first10</span> | measure ws -s).Sum</div><div class="line"><span class="variable">$objWorksheet</span>.Cells.Item(<span class="number">11</span>,<span class="number">1</span>) = <span class="string">"Others"</span>; <span class="variable">$objWorksheet</span>.Cells.Item(<span class="number">11</span>,<span class="number">2</span>) = <span class="variable">$otherMem</span></div><div class="line"><span class="comment"># draw the pie chart</span></div><div class="line"><span class="variable">$objCharts</span> = <span class="variable">$objWorksheet</span>.ChartObjects()</div><div class="line"><span class="variable">$objChart</span> = <span class="variable">$objCharts</span>.Add(<span class="number">0</span>, <span class="number">0</span>, <span class="number">500</span>, <span class="number">300</span>)</div><div class="line"><span class="variable">$objChart</span>.Chart.SetSourceData(<span class="variable">$objWorksheet</span>.range(<span class="string">"A1:B11"</span>), <span class="number">2</span>)</div><div class="line"><span class="variable">$objChart</span>.Chart.ChartType = <span class="number">70</span></div><div class="line"><span class="variable">$objChart</span>.Chart.ApplyDataLabels(<span class="number">5</span>)</div></pre></td></tr></table></figure></p>
+<p><img src="http://oskhhyaq3.bkt.clouddn.com/blog/170705/CJi70f9ahF.png?imageslim" alt="mark"><br>没错，有点慢，等下吧，接下来它自动打开了excel，如图，我果然还是IT之家老粉丝啊<br><img src="http://oskhhyaq3.bkt.clouddn.com/blog/170705/B8IDAdFlm4.png?imageslim" alt="mark"><br>&#160;&#160;&#160;&#160;上面一段代码是PowerShell界常见的一段神代码，很多初学者被其带入了PowerShell的大门。有效代码不过20来行，作用是把当前系统中最占内存的10个进程的数据发送到Excel中，并绘制成三维饼图。CMD是很难做到了，被替代也理所应当了。<br>&#160;&#160;&#160;&#160;PowerShell的定位是操作系统和应用程序的管理工具，从这个角度看，它是CMD的升级版，并非简单的对CMD进行扩展，事实上微软也不打算扩展和升级CMD了，以后PowerShell将全方位的替代CMD，目前CMD和PowerShell还是并存状态。<br>下面正式介绍PowerShell。</p>
+<h3 id="（一）简单的命令"><a href="#（一）简单的命令" class="headerlink" title="（一）简单的命令"></a>（一）简单的命令</h3><p>&#160;&#160;&#160;&#160;在CMD中，命令是从非常简单（如attrib.exe）到非常复杂（如netsh.exe）的可执行程序，新入门用户一旦遇到复杂命令，只能束手无策，只能求助搜索引擎，解决当前需求之后，就把命令的用法抛诸脑后，下次使用又要重新学习，极其不便。<br><img src="http://oskhhyaq3.bkt.clouddn.com/blog/170705/526ijlFjLJ.png?imageslim" alt="mark"><br>&#160;&#160;&#160;&#160;PowerShell命令设计非常规范，它的命令由“动词”和“名词”两部分组成，比如“get”表示检索数据，“process”表示系统进程，把“get”和“process”组合起来的PowerShell命令就是“get-process”，意思是获取系统进程列表，这种命令在PowerShell中称为“cmdlet（读作“command-let”）”。<br><img src="http://oskhhyaq3.bkt.clouddn.com/blog/170705/CIBlH2i1f7.png?imageslim" alt="mark"><br>&#160;&#160;&#160;&#160;使用“动词-名词”结构还有一个好处，就是不同的“动词”和“名词”可以自由组合，很少的几个“动词”和“名词”就可以组合出大量的可用命令，使命令记忆量大为降低，只需记住简单的几个词语，就可以使用大量的命令，这是包括命令提示符CMD在内的Shell不具备的，并且不会产生歧义，对新用户非常友好。</p>
+<h3 id="（二）别名系统"><a href="#（二）别名系统" class="headerlink" title="（二）别名系统"></a>（二）别名系统</h3><p>&#160;&#160;&#160;&#160;“动词-名词”结构的cmdlet固然对新手友好，但也带来了另一个问题，命令名称过长，在命令行交互使用时不方便，在命令行窗口输入命令可以使用Tab键进行补全，可是经常使用还是需要键入大量的内容，要是能够把命令缩短一些就好了。PowerShell在设计时已经考虑到了，为此创建了别名系统，之所以叫名别系统，是因为PowerShell中的别名非常强大，能够非常方便的对别名进行增加、删除、修改，还为之创建了别名驱动器，可以像访问文件系统驱动器一样方便的访问别名驱动器。<br>PowerShell非常贴心的为用户创建了大量内置别名，一方面减少了常用命令的输入长度，另一方面也为熟悉其它Shell而不熟悉PowerShell的用户提供了方便，常见Shell如bash、cmd，PowerShell都为用户提供了他们熟悉的别名。下面是可以在Powershell中使用的通用的Cmd.exe和UNIX命令的简短列表。<br><strong>在PowerShell下输入</strong><br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">get-alias</span></div></pre></td></tr></table></figure></p>
+<p>以下只显示了部分，要想查询所有别名请用<code>alias</code>命令查询<br><img src="http://oskhhyaq3.bkt.clouddn.com/blog/170705/6AghbjEgAg.png?imageslim" alt="mark"><br>&#160;&#160;&#160;&#160;PowerShell除了自带别名外，用户自己也可以创建别名，不仅仅可以为cmdlet创建别名，也可以为PowerShell函数、带参数的命令和包含完整路径的命令行程序创建别名。<br>比如为记事本创建别名，可以使用如下命令<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">New-Alias</span> np c:\windows\notepad.exe</div></pre></td></tr></table></figure></p>
+<p>&#160;&#160;&#160;&#160;创建别名完成后，在命令行中输入np就能直接打开记事本。在命令行中创建的别名只能在当前命令行窗口中使用，如果想以后也能使用此别名，可以把以上命令保存在PowerShell配置文件中，以后无论是在命令行中，还是使用脚本，都可以在本机使用np别名了。<br><img src="http://oskhhyaq3.bkt.clouddn.com/blog/170705/8h0kd2FD21.png?imageslim" alt="mark"><br>PowrShell配置文件位置可以使用$profile命令查询。</p>
+<p>&#160;&#160;&#160;&#160;想查看当前命令行窗口可以使用的别名，可以进入别名驱动器查看，使用dir alias:就能查看所有能用的别名，也可以使用get-alias命令查看别名。</p>
+<h3 id="三-管理任务"><a href="#三-管理任务" class="headerlink" title="(三) 管理任务"></a>(三) 管理任务</h3><p>Windows PowerShell的基本目标是使用户能够以交互方式或通过脚本更好、更容易地对系统进行管理控制，为了达成这个目标，PowerShell提供了大量命令来执行各种管理任务，让用户轻松完成管理系统任务。</p>
+<h4 id="1、管理进程"><a href="#1、管理进程" class="headerlink" title="1、管理进程"></a>1、管理进程</h4><p>前面已经提过管理系统进程的命令，管理进程常用命令就是get-process命令和stop-process命令，get-process命令获取进程之后可以直接用管道发送给stop-process命令结束进程。比如，关闭之前打开的记事本，可以使用下面的命令很方便的关闭记事本。<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">get-process</span> -Name notepad | <span class="built_in">stop-process</span></div></pre></td></tr></table></figure></p>
+<h4 id="2、处理文件和文件夹"><a href="#2、处理文件和文件夹" class="headerlink" title="2、处理文件和文件夹"></a>2、处理文件和文件夹</h4><p>&#160;&#160;&#160;&#160;PowerShell使用Get-ChildItem获取文件夹中直接包含的所有项，它有系统内置别名dir和ls，使用CMD和BASH的用户均可以轻松上手。如果想查看C:中的文件夹和文件，直接使用dir c:，PowerShell立刻就会列出C:中的文件和文件夹。其它处理文件和文件夹的命令有Copy-Item、New-Item、Remove-Item等，具体用法可以使用get-help然后跟命令名称即可查询。</p>
+<h4 id="3、处理系统服务"><a href="#3、处理系统服务" class="headerlink" title="3、处理系统服务"></a>3、处理系统服务</h4><p>&#160;&#160;&#160;&#160;可以像管理进程一样管理系统服务，Get-Service命令获取服务列表，Stop-Service命令停止服务，Start-Service命令启动服务，Suspend-Service命令挂起服务，Restart-Service命令重启服务，Set-Service服务设置服务属性。如果想一次性启动已经停止的服务，可以使用以下命令：<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">get-service</span> | <span class="built_in">where-object</span> &#123;<span class="variable">$_</span>.Status <span class="nomarkup">-eq</span> <span class="string">"Stopped"</span>&#125; -exclude</div><div class="line">wisvc | <span class="built_in">start-service</span></div></pre></td></tr></table></figure></p>
+<p>&#160;&#160;&#160;&#160;这行命名会把除wisvc之外的命令都启动，这只是一个示例，不要在自己电脑使用，启动所有服务会消耗大量系统资源。</p>
+<h4 id="4、处理注册表"><a href="#4、处理注册表" class="headerlink" title="4、处理注册表"></a>4、处理注册表</h4><p>&#160;&#160;&#160;&#160;PowerShell可以非常方便的处理注册表项目，与进程和服务不同的是，PowerShell并未提供专用的注册表命令，而是使用处理文件和文件夹的命令，这并不奇怪，PowerShell为用户提供了注册表驱动器，可以很好的处理注册表项目。由于注册表对系统非常重要，错误处理注册表也许会导致系统出问题，处理注册表，特别是删除注册表项目要非常小心，最好能在处理注册表项目之前先备份要处理的项目。没有管理员权限也能处理部分注册表项目，这与regedit注册表编辑器不同，注册表编辑器必须使用管理员权限打开，然后才能操作项目。<br><strong>下面的表格列出了访问注册表所需的所有命令</strong></p>
+<p><img src="http://oskhhyaq3.bkt.clouddn.com/blog/170705/LcIe6FFlJ4.png?imageslim" alt="mark"><br>PowerShell只提供了两个注册表驱动器HKCU:和HKLM:，其中HKLM:是HKEY_LOCAL_MACHINE的缩写，HKCU:是HKEY_CURRENT_USER的缩写，如果想要访问所有注册表驱动器，可以进入Microsoft.PowerShell.Core\Registry::。</p>
+<h4 id="5、处理其它任务"><a href="#5、处理其它任务" class="headerlink" title="5、处理其它任务"></a>5、处理其它任务</h4><p>PowerShell还可以处理证书、防火墙、appx应用、打印机等任务。大家可以使用get-command命令查找相关命令。</p>
+</the>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PowerShell/" rel="tag"># PowerShell</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/为什么要建立这个博客/index.html  2017/07/04/为什么要建立这个博客/" rel="next" title="我为什么要建立这个博客">
+                <i class="fa fa-chevron-left"></i> 我为什么要建立这个博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/UWP学习笔记/什么是UWP/index.html  2017/07/08/UWP学习笔记/什么是UWP/" rel="prev" title="UWP学习笔记 (一) 初识UWP">
+                UWP学习笔记 (一) 初识UWP <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/avatar.png"
+                alt="lovemefan"/>
+            
+              <p class="site-author-name" itemprop="name">lovemefan</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/lovemefan" title="GitHub &rarr; https://github.com/lovemefan" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识PowerShell"><span class="nav-number">1.</span> <span class="nav-text">初识PowerShell</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell的邂逅"><span class="nav-number">1.1.</span> <span class="nav-text">PowerShell的邂逅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是PowerShell"><span class="nav-number">1.2.</span> <span class="nav-text">什么是PowerShell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）简单的命令"><span class="nav-number">1.2.1.</span> <span class="nav-text">（一）简单的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）别名系统"><span class="nav-number">1.2.2.</span> <span class="nav-text">（二）别名系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-管理任务"><span class="nav-number">1.2.3.</span> <span class="nav-text">(三) 管理任务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、管理进程"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">1、管理进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、处理文件和文件夹"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">2、处理文件和文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、处理系统服务"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">3、处理系统服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、处理注册表"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">4、处理注册表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、处理其它任务"><span class="nav-number">1.2.3.5.</span> <span class="nav-text">5、处理其它任务</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lovemefan</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.3.7</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.1</div>
+
+<span class="post-meta-divider">|</span>
+<a href="http://www.beian.miit.gov.cn" target="_blank">赣ICP备18013113号</span>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+    
+    
+  
+  <script color='252,158,111' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/js/jquery.fancybox.pack.js"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+  
+  
+  <script>
+  (function() {
+    var appid = 'cytRYb5F8';
+    var conf = 'prod_21fc00315e6c96cfc3c8089a48fee64a';
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+    }
+    else {
+      var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});
+    }
+  })();
+  </script>
+  <script src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+
+</body>
+</html>
